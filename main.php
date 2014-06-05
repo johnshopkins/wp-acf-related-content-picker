@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: SidebarPicker
+Plugin Name: RelatedContentPicker
 Description: 
 Author: johnshopkins
 Version: 0.1
 */
 
-class SidebarPickerMain
+class RelatedContentPicker
 {
   public function __construct($logger)
   {
@@ -18,4 +18,4 @@ class SidebarPickerMain
   }
 }
 
-new SidebarPickerMain($wp_logger);
+new RelatedContentPicker($wp_logger);

@@ -1,9 +1,9 @@
 {
-    "name": "johnshopkins/wp-acf-sidebar-picker",
+    "name": "johnshopkins/wp-acf-related-content-picker",
     "type": "wordpress-plugin",
     "description": "",
     "license": "MIT",
-    "homepage": "http://github.com/johnshopkins/wp-acf-sidebar-picker",
+    "homepage": "http://github.com/johnshopkins/wp-acf-related-content-picker",
     "authors": [
         {
             "name": "johnshopkins",
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4" : {
-            "SidebarPicker\\" : ["src/", "tests/"]
+            "RelatedContentPicker\\" : ["src/", "tests/"]
         }
     }
 }

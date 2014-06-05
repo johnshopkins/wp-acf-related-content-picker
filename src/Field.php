@@ -1,6 +1,6 @@
 <?php
 
-namespace SidebarPicker;
+namespace RelatedContentPicker;
 
 class Field extends \acf_field
 {   
@@ -9,8 +9,8 @@ class Field extends \acf_field
         
   public function __construct($logger)
   {
-    $this->name = 'sidebar_picker';
-    $this->label = __('Sidebar Picker');
+    $this->name = 'related_content_picker';
+    $this->label = __('Related Content Picker');
     $this->category = __("Choice",'acf');
     $this->defaults = array(
       "multiple" =>  0
@@ -25,22 +25,22 @@ class Field extends \acf_field
     );
   }
 
-  protected function getSidebars()
+  protected function getRelatedContentGroups()
   {
     $posts = get_posts(array(
-      "post_type" => "sidebar",
+      "post_type" => "related_content",
       "posts_per_page" => -1
     ));
 
-    $sidebars = array();
+    $related_content = array();
 
-    foreach ($posts as $sidebar) {
-      $sidebars[$sidebar->ID] = $sidebar->post_title;
+    foreach ($posts as $post) {
+      $related_content[$post->ID] = $post->post_title;
     }
 
-    $sidebars["inherit"] = "Inherit Parent Sidebar";
+    $related_content["inherit"] = "Inherit Parent Sidebar";
 
-    return $sidebars;
+    return $related_content;
   }
     
   public function create_field($field)
@@ -50,7 +50,7 @@ class Field extends \acf_field
     echo "<div class='acf-input-wrap'>";
     echo '<select id="' . $field['id'] . '" class="' . $field['class'] . '" name="' . $field['name'] . '" >';
 
-    $sidebars = $this->getSidebars();
+    $sidebars = $this->getRelatedContentGroups();
 
     foreach($sidebars as $k => $v) {
 
