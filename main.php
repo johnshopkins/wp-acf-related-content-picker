@@ -13,7 +13,7 @@ class RelatedContentPicker
     $this->logger = $logger;
 
     add_action('acf/register_fields', function () {
-      new \SidebarPicker\Field($this->logger);
+      new \RelatedContentPicker\Field($this->logger);
     });
   }
 }
