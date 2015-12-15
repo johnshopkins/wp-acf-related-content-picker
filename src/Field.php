@@ -3,10 +3,9 @@
 namespace RelatedContentPicker;
 
 class Field extends \acf_field
-{   
-  public $settings;
+{
   public $defaults;
-        
+
   public function __construct($logger)
   {
     $this->name = 'related_content_picker';
@@ -15,14 +14,8 @@ class Field extends \acf_field
     $this->defaults = array(
       "multiple" =>  0
     );
-    
-    parent::__construct();
 
-    $this->settings = array(
-        'path' => apply_filters('acf/helpers/get_path', __FILE__),
-        'dir' => apply_filters('acf/helpers/get_dir', __FILE__),
-        'version' => '1.0.0'
-    );
+    parent::__construct();
   }
 
   protected function getRelatedContentGroups()
@@ -42,8 +35,8 @@ class Field extends \acf_field
 
     return $related_content;
   }
-    
-  public function create_field($field)
+
+  public function render_field($field)
   {
     $value = $field["value"] ? $field["value"] : "inherit";
 

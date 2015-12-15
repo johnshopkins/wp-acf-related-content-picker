@@ -12,7 +12,7 @@ class RelatedContentPicker
   {
     $this->logger = $logger;
 
-    add_action('acf/register_fields', function () {
+    add_action('acf/include_field_types', function () {
       new \RelatedContentPicker\Field($this->logger);
     });
   }
