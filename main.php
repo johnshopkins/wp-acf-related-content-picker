@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: RelatedContentPicker
-Description: 
-Author: johnshopkins
+Plugin Name: Related Content Picker
+Description: Adds the ability to choose a related content item or default to the inherited page's related content item.
+Author: Jen Wachter
 Version: 0.1
 */
 
