@@ -18,4 +18,4 @@ class RelatedContentPicker
   }
 }
 
-new RelatedContentPicker($wp_logger);
+new RelatedContentPicker($dependencies["logger_wp"]);
