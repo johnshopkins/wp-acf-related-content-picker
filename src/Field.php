@@ -6,7 +6,7 @@ class Field extends \acf_field
 {
   public $defaults;
 
-  public function __construct($logger)
+  public function __construct()
   {
     $this->name = 'related_content_picker';
     $this->label = __('Related Content Picker');

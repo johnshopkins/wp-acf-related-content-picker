@@ -8,14 +8,12 @@ Version: 0.1
 
 class RelatedContentPicker
 {
-  public function __construct($logger)
+  public function __construct()
   {
-    $this->logger = $logger;
-
     add_action('acf/include_field_types', function () {
-      new \RelatedContentPicker\Field($this->logger);
+      new \RelatedContentPicker\Field();
     });
   }
 }
 
-new RelatedContentPicker($dependencies["logger_wp"]);
+new RelatedContentPicker();
