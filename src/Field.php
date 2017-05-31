@@ -55,4 +55,35 @@ class Field extends \acf_field
     echo "</div>";
   }
 
+  /**
+   * This filter is appied to the $value after it is loaded from the
+   * database and before it is returned to the template
+   */
+  function format_value( $value, $post_id, $field )
+  {
+    if (empty($value)) return null;
+
+    if ($value == "inherit") {
+      $value = $this->findParentMenu($post_id);
+    }
+
+    return $value;
+  }
+
+  protected function findParentMenu($id)
+  {
+    $ansestors = get_post_ancestors($id);
+
+    foreach ($ansestors as $id) {
+
+      $parent = get_post_meta($id, "region_related_sidebar", true);
+      if ($parent == "inherit") continue;
+      return $parent;
+
+    }
+
+    // nothing found
+    return null;
+  }
+
 }
